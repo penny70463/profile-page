@@ -44,6 +44,11 @@ const { styles } = useFixedHeader(headerRef);
 const items = [
   { name: "Home", path: "/", icon: "solar:home-smile-outline" },
   {
+    name: "My skills",
+    path: "/my-skills",
+    icon: "game-icons:skills",
+  },
+  {
     name: "Projects",
     path: "/projects",
     icon: "solar:folder-with-files-outline",
@@ -53,16 +58,6 @@ const items = [
     path: "/articles",
     icon: "solar:document-add-outline",
   },
-  { name: "Lab", path: "/lab", icon: "heroicons:beaker" },
-  {
-    name: "What's in my bag?",
-    path: "/whats-in-my-bag",
-    icon: "solar:backpack-outline",
-  },
-  {
-    name: "Bookmarks",
-    path: "/bookmarks",
-    icon: "solar:bookmark-linear",
-  },
+ 
 ];
 </script>

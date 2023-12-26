@@ -1,19 +1,15 @@
 <template>
-  <li>
-    <NuxtLink :to="item.url" class="group" target="_blank" external>
       <p
-        class="text-base font-semibold text-gray-700 dark:text-gray-300 group-hover:text-primary-600"
+        class="text-sm text-gray-500 dark:text-gray-300"
       >
-        {{ item.name }}
+        {{ item }}
       </p>
-      <p class="text-sm text-gray-500">{{ item.description }}</p>
-    </NuxtLink>
-  </li>
+      <!-- <p class="text-sm text-gray-500">{{ item.description }}</p> -->
 </template>
 
 <script setup>
 defineProps({
-  item: Object,
+  item: String,
   required: true,
 });
 </script>
