@@ -7,12 +7,18 @@ slug: "vuejs-framework-design-and-implementation-1"
 
 <!-- > This article was created using ChatGPT and meant as a placeholder -->
 This series of articles is a personal reading record of the book [Vue. JS Framework Design and Implementation](https://link.springer.com/book/10.1007/978-981-99-4947-2). This series dives into six key aspects: 
-### [- The Overview of Framework Design]
-### [- Reactivity System]
-### [- Render]
-### [- Modularization]
-### [- Compiler]
-### [- Server Side Rendering]
+ [- The Overview of Framework Design]
+
+ [- Reactivity System]
+
+ [- Render]
+
+ [- Modularization]
+
+ [- Compiler]
+
+ [- Server Side Rendering]
+ 
 
 We're starting with the first one: The overview of framework design.
 
