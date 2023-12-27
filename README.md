@@ -1,36 +1,35 @@
-# Zooper
+## Personal Website
 
-Zooper is a beautiful personal portfolio template for developers, programmers, freelancers and designers.
-
-![Zooper template home preview](https://zooper.pages.dev/preview.jpg)
+[Live URL](https://penny70463.netlify.app)
 
 
-## Features
+### Challenges I've faced 
 
-Full features blog 📝.
-CMS ready 🚀.
-Super fast ⚡.
-SEO friendly 📈.
-Fully responsive 📱.
-Dark mode 🌗.
-Syntax highlighting 🌈.
-Social media links 🔗.
-Code preview playground 🎮.
-Uses page 🧑‍💻
-Bookmarks 📑.
+#### Common Issues When Deploy A Nuxt.js Project On Netlify
 
-## Roadmap
+1. npm run build works on local but got when deploying
 
-Comments
-Tags
-Categories
-Pagination
-Sitemap
-RSS feeds
-Search
-Likes
+````js
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+````
+ [solution works for me](https://answers.netlify.com/t/build-command-javascript-heap-out-of-memory/85348/6)
+ 
+2. I got 404 after deployment finished 
 
-## Tech Stack
+ [solution works for me](https://answers.netlify.com/t/netlify-returns-404-for-ssr-nuxt-website/99741/10)
+
+3. my avatar got 404
+
+wait to be resolved
+
+### Features Coming Soon
+
+SearchDocs
+Article Categories
+Article Outline
+Message Board
+
+### Tech Stack
 
 1. Nuxt JS
 2. Tailwind CSS
@@ -38,13 +37,11 @@ Likes
 4. Nuxt Content Module
 5. Shiki JS ES
 
-## Installation
+### Installation
 
 1. `git clone` this repo or click on `Use this template` button.
 2. `cd` into the project directory.
 3. Run `yarn install` to install the dependencies.
 4. Run `yarn dev` to start the development server.
 
-## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
