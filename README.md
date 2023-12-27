@@ -5,7 +5,7 @@
 
 ### Challenges I've faced 
 
-#### Common Issues When Deploy A Nuxt.js Project On Netlify
+#### Common Issues When Deploying A Nuxt.js Project On Netlify
 
 1. npm run build works on local but got when deploying
 
