@@ -1,9 +1,9 @@
 <template>
-    <div class="fixed top-0 right-0 max-w-md">
-        <h2 class="uppercase font-h2 text-lg lg:mt-16 tracking-wider">
+    <div class="fixed top-0 right-0 max-w-md hidden xl:block">
+        <h2 class="uppercase font-h2 text-md text-center lg:mt-16 tracking-wider">
             Table of contents
         </h2>
-        <nav class="mt-4">
+        <nav class="mt-4 px-12">
             <ul>
                 <li
                     @click="tableOfContentsHeadingClick(link)"
@@ -17,7 +17,7 @@
                         'hover:gray-900': link.id !== currentlyActiveToc,
                         }"
                     role="button"
-                    class="transition-colors duration-75 text-base mb-2 block"
+                    class="transition-colors duration-75 text-sm mb-2 block"
                     :href="`#${link.id}`"
                     >{{ link.text }}</a>
                         <ul>
@@ -33,7 +33,7 @@
                                     'hover:gray-900': child.id !== currentlyActiveToc,
                                     }"
                                 role="button"
-                                class="transition-colors duration-75 text-base mb-2 block"
+                                class="transition-colors duration-75 text-sm mb-2 block"
                                 :href="`#${child.id}`"
                                 >{{ child.text }}</a>
                                 
@@ -68,7 +68,6 @@ onMounted(() => {
     observer.value = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         const id = entry.target.getAttribute('id');
-        console.log(entry)
         if (entry.isIntersecting) {
         currentlyActiveToc.value = id;
         }
