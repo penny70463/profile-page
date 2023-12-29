@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "@nuxthq/studio",
     "@vueuse/nuxt"
   ],
+  plugins: ['~/plugins/firebase'],
   ui: {
     icons: ["heroicons", "lucide"],
   },
@@ -45,5 +46,14 @@ export default defineNuxtConfig({
          ? { preset: ['default', { discardComments: { removeAll: true } }] }
          : false, // disable cssnano when not in production
     },
+ },
+ runtimeConfig: {
+  apiKey: "AIzaSyC4Rtcrl9hdhvWDuRPB7fLKxETYGJqGFRw",
+  authDomain: "vast-block-262207.firebaseapp.com",
+  projectId: "vast-block-262207",
+  storageBucket: "vast-block-262207.appspot.com",
+  messagingSenderId: "864767740820",
+  appId: "1:864767740820:web:4b732df9720c3edd939d81",
+  measurementId: "G-WZG61JRCGN"
  }
 });

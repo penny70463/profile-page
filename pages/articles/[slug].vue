@@ -7,6 +7,7 @@
         <article>
           <h1>{{ doc.title }}</h1>
           <ContentRenderer :value="doc" />
+          <MessageBoard />
         </article>
         <TableOfContent :content="doc"/>
       </ContentDoc>
@@ -15,7 +16,7 @@
 </template>
 <script setup>
 import TableOfContent from './tableOfContent.vue';
-
+import MessageBoard from './messageBoard.vue'
 useSeoMeta({
   articleAuthor: "Penny Kuo",
 });

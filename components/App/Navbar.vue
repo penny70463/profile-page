@@ -58,6 +58,5 @@ const items = [
     path: "/articles",
     icon: "solar:document-add-outline",
   },
- 
 ];
 </script>
