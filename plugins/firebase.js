@@ -1,8 +1,10 @@
 import { getApps, initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, addDoc, setDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc, setDoc, doc } from "firebase/firestore";
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth"
+
 export default defineNuxtPlugin(async (nuxtApp) => {
     const runtimeConfig = useRuntimeConfig()
+    
     let docs, addNewMessage, signInWithGoogle, signOutWithGoogle
     if (!getApps().length) {
         const app = initializeApp({
@@ -19,19 +21,21 @@ export default defineNuxtPlugin(async (nuxtApp) => {
             });
         let db = getFirestore(app, '(default)');
         const messageTable = collection(db,'message-table');
-        docs = (await getDocs(messageTable)).docs;
         
-        addNewMessage = async (slug) => {
-            if(!messages?.docs.some(elm =>  elm.id === slug)) {
-                try {
-                    const docRef = await addDoc(messageTable, [], { docId: slug });
-                    console.log("Document written with ID => ", docRef.id);
-                    console.log("success", "新增成功");
-                        } catch (error) {
-                    console.log("error => ", error);
-                    }
-            } else {
+        async function getDocuments() {
+            docs = (await getDocs(messageTable)).docs;
+        }
 
+        await getDocuments()
+        addNewMessage = async ({slug, messagePack, getMessages}) => {
+            try {
+                console.log(messagePack,'messagePack')
+                await setDoc(doc(db, "message-table", slug), messagePack);
+                await getDocuments()
+                getMessages(docs)
+                alert('success')
+            } catch (error) {
+                console.log("error => ", error);
             }
         }
 
@@ -61,10 +65,10 @@ export default defineNuxtPlugin(async (nuxtApp) => {
                 // Sign-out successful.
                 // TODO dialog inform
                 setUser('')
-              }).catch((error) => {
+                }).catch((error) => {
                 // An error happened.
                 console.log(error)
-              });
+                });
         }
     }
     return {
@@ -72,6 +76,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
             docs,
             signInWithGoogle,
             signOutWithGoogle,
+            addNewMessage
         }
     }
 });
