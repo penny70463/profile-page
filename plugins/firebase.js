@@ -29,11 +29,10 @@ export default defineNuxtPlugin(async (nuxtApp) => {
         await getDocuments()
         addNewMessage = async ({slug, messagePack, getMessages}) => {
             try {
-                console.log(messagePack,'messagePack')
                 await setDoc(doc(db, "message-table", slug), messagePack);
                 await getDocuments()
                 getMessages(docs)
-                alert('success')
+                alert('Submit success!')
             } catch (error) {
                 console.log("error => ", error);
             }
@@ -44,8 +43,8 @@ export default defineNuxtPlugin(async (nuxtApp) => {
             const provider = new GoogleAuthProvider();
             signInWithPopup(auth, provider)
             .then((result) => {
-                const user = result.user;
-                setUser(user.email)
+                const { user: {email} } = result
+                setUser(email.substring(0, email.indexOf("@")))
             }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;
@@ -59,12 +58,12 @@ export default defineNuxtPlugin(async (nuxtApp) => {
             });
         }
 
-        signOutWithGoogle = (setUser) => {
+        signOutWithGoogle = (setUser, resetMessage) => {
             const auth = getAuth();
             signOut(auth).then(() => {
                 // Sign-out successful.
-                // TODO dialog inform
                 setUser('')
+                resetMessage()
                 }).catch((error) => {
                 // An error happened.
                 console.log(error)

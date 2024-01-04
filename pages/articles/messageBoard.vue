@@ -1,30 +1,37 @@
 <template>
-    <div class="flex flex-col items-center">
+    <div class="flex gap-8 flex-col items-center py-16">
         <div 
             v-if="user"
-            class="flex flex-col"
+            class="flex flex-col w-full sm:w-2/3"
             >
             <textarea 
                 id="message" 
                 name="message"
                 v-model="message"
+                class="rounded-lg py-2 pl-3 bg-slate-200"
                 :placeholder="`leave a message as ${user}`"></textarea>
-            <button :disabled="!message" @click="$addNewMessage({slug, messagePack, getMessages})">送出</button>
         </div>
         <button
             v-if="!user"
-            class="bg-blue-500 rounded-lg py-1.5 w-2/3 text-white"  
+            class="bg-blue-500 rounded-lg p-1.5 w-full sm:w-2/3 text-white hover:bg-blue-600"  
             @click="() => $signInWithGoogle(setUser)">Sign In With Google To Leave A Message</button>  
-        <button 
+        <div 
             v-else
-            class="bg-red-500 rounded-lg py-1.5 w-2/3 text-white"  
-            @click="() => $signOutWithGoogle(setUser)">Sign Out</button>  
+            class="flex justify-between w-full sm:w-2/3">
+            <button 
+                class="w-2/5 sm:w-1/3 bg-orange-500 rounded-lg p-1.5 text-white disabled:hover:cursor-not-allowed hover:bg-orange-600"
+                :disabled="!message" 
+                @click="$addNewMessage({slug, messagePack, getMessages})">Submit</button>
+            <button 
+                class="w-2/5 sm:w-1/3 bg-red-500 rounded-lg p-1.5 text-white hover:bg-red-600"  
+                @click="() => $signOutWithGoogle(setUser, resetMessage)">Sign Out</button>
+        </div>
         <div class="messages w-full">
             <div
-            class="bg-white dark:bg-slate-800/60 rounded-lg py-3.5 px-5 my-7 flex flex-col"
-            v-for="{ author, message, createdAt } in messages"
-            :key="createdAt"
-            >
+                class="bg-white dark:bg-slate-800/60 rounded-lg py-3.5 px-5 my-7 flex flex-col"
+                v-for="{ author, message, createdAt } in messages"
+                :key="createdAt"
+                >
             <span class="font-semibold">{{ author }}</span>
             <span class="font-thin text-xs text-gray-500">{{createdAt}}</span>
             <p>{{ message }}</p>
@@ -49,11 +56,15 @@ const setUser = (username) => {
 
 function resetMessages() {
     messages.value = []
+}
+
+function resetMessage() {
     message.value = ''
 }
 
 function getMessages(docs = $docs) {
     resetMessages()
+    resetMessage()
     docs.forEach(doc => {
     if(doc.id === slug) {
         collection.value = doc.data()
