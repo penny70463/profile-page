@@ -32,11 +32,11 @@ wait to be resolved
 
 ### Features Coming Soon
 
-- [ ]Article Categories
+- [ ] Article Categories
 
-- [x]Article Outline
+- [x] Article Outline
 
-- [x]Message Board
+- [x] Message Board
 
 ### Tech Stack
 
