@@ -18,9 +18,9 @@ FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaS
 
  [solution works for me](https://answers.netlify.com/t/netlify-returns-404-for-ssr-nuxt-website/99741/10)
 
-- [ ] my avatar got 404
-
-wait to be resolved
+- [x] my avatar got 404
+ 
+ Nuxt Image doesn’t seem to be directly compatible with Netlify, so I used <img /> directly for static directory.
 
 #### Other Issues 
 
@@ -37,6 +37,8 @@ wait to be resolved
 - [x] Article Outline
 
 - [x] Message Board
+
+- [ ] Session Storage
 
 ### Tech Stack
 

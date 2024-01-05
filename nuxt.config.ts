@@ -1,12 +1,4 @@
 export default defineNuxtConfig({
-  security: {
-    headers: {
-      crossOriginOpenerPolicy: 'allow-popups',
-    },
-  },
-  image: {
-    provider: "ipx"
-},
   devtools: { enabled: true },
   modules: [
     "@nuxt/ui",
@@ -56,12 +48,14 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-  apiKey: "AIzaSyC4Rtcrl9hdhvWDuRPB7fLKxETYGJqGFRw",
-  authDomain: "vast-block-262207.firebaseapp.com",
-  projectId: "vast-block-262207",
-  storageBucket: "vast-block-262207.appspot.com",
-  messagingSenderId: "864767740820",
-  appId: "1:864767740820:web:4b732df9720c3edd939d81",
-  measurementId: "G-WZG61JRCGN"
- }
+      public: {
+        apiKey: process.env.apiKey,
+        authDomain: process.env.authDomain,
+        projectId: process.env.projectId,
+        storageBucket: process.env.storageBucket,
+        messagingSenderId: process.env.messagingSenderId,
+        appId: process.env.appId,
+        measurementId: process.env.measurementId,
+    }
+  },
 });

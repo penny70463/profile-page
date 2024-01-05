@@ -3,22 +3,19 @@ import { getFirestore, collection, getDocs, addDoc, setDoc, doc } from "firebase
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth"
 
 export default defineNuxtPlugin(async (nuxtApp) => {
-    const runtimeConfig = useRuntimeConfig()
-    
+    const { public: config } = useRuntimeConfig()
+    console.log(config, 'runtimeConfig')
     let docs, addNewMessage, signInWithGoogle, signOutWithGoogle
     if (!getApps().length) {
         const app = initializeApp({
-            // ...runtimeConfig,
-            // projectId: "vast-block-262207",
             // TODO replace here
-                apiKey: "AIzaSyC4Rtcrl9hdhvWDuRPB7fLKxETYGJqGFRw",
-                authDomain: "vast-block-262207.firebaseapp.com",
-                projectId: "vast-block-262207",
-                storageBucket: "vast-block-262207.appspot.com",
-                messagingSenderId: "864767740820",
-                appId: "1:864767740820:web:4b732df9720c3edd939d81",
-                measurementId: "G-WZG61JRCGN",
-                signInFlow: "popup"
+                apiKey: config.apiKey,
+                authDomain: config.authDomain,
+                projectId: config.projectId,
+                storageBucket: config.storageBucket,
+                messagingSenderId: config.messagingSenderId,
+                appId: config.appId,
+                measurementId: config.measurementId,
             });
         let db = getFirestore(app, '(default)');
         const messageTable = collection(db,'message-table');
