@@ -7,27 +7,36 @@
 
 #### Common Issues When Deploying A Nuxt.js Project On Netlify
 
-1. npm run build works on local but got when deploying
+- [x] npm run build works on local but got this error when deploying
 
 ````js
 FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
 ````
  [solution works for me](https://answers.netlify.com/t/build-command-javascript-heap-out-of-memory/85348/6)
  
-2. I got 404 after deployment finished 
+- [x] I got 404 after deployment finished 
 
  [solution works for me](https://answers.netlify.com/t/netlify-returns-404-for-ssr-nuxt-website/99741/10)
 
-3. my avatar got 404
+- [ ] my avatar got 404
 
 wait to be resolved
 
+#### Other Issues 
+
+- [ ] useRuntimeConfig didn't work
+
+- [ ] Unchecked runtime.lastError: The message port closed before a response was received.
+
+- [ ] Got "Cross-Origin-Opener-Policy policy would block the window.close call." when logging with Google.
+
 ### Features Coming Soon
 
-SearchDocs
-Article Categories
-Article Outline
-Message Board
+- [ ]Article Categories
+
+- [x]Article Outline
+
+- [x]Message Board
 
 ### Tech Stack
 
@@ -36,6 +45,7 @@ Message Board
 3. Vue
 4. Nuxt Content Module
 5. Shiki JS ES
+6. Google firebase: firestore, auth
 
 ### Installation
 

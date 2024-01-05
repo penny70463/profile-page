@@ -18,6 +18,8 @@
     "nuxt-icon": "0.6.7",
     "prettier": "3.1.1",
     "prettier-plugin-tailwindcss": "0.5.9",
+    "typescript": "^5.0.4",
+    "vue-tsc": "1.6.4",
     "yarn-upgrade-all": "^0.7.2"
   },
   "dependencies": {

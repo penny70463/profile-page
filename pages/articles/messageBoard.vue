@@ -8,7 +8,7 @@
                 id="message" 
                 name="message"
                 v-model="message"
-                class="rounded-lg py-2 pl-3 bg-slate-200"
+                class="rounded-lg py-2 pl-3 bg-slate-200 text-slate-800"
                 :placeholder="`leave a message as ${user}`"></textarea>
         </div>
         <button
@@ -17,13 +17,13 @@
             @click="() => $signInWithGoogle(setUser)">Sign In With Google To Leave A Message</button>  
         <div 
             v-else
-            class="flex justify-between w-full sm:w-2/3">
+            class="grid grid-cols-2 gap-4 w-full sm:w-2/3">
             <button 
-                class="w-2/5 sm:w-1/3 bg-orange-500 rounded-lg p-1.5 text-white disabled:hover:cursor-not-allowed hover:bg-orange-600"
+                class="bg-orange-500 rounded-lg p-1.5 text-white disabled:hover:cursor-not-allowed hover:bg-orange-600"
                 :disabled="!message" 
                 @click="$addNewMessage({slug, messagePack, getMessages})">Submit</button>
             <button 
-                class="w-2/5 sm:w-1/3 bg-red-500 rounded-lg p-1.5 text-white hover:bg-red-600"  
+                class="bg-red-500 rounded-lg p-1.5 text-white hover:bg-red-600"  
                 @click="() => $signOutWithGoogle(setUser, resetMessage)">Sign Out</button>
         </div>
         <div class="messages w-full">

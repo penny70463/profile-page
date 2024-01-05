@@ -42,7 +42,7 @@ useSeoMeta({
   description,
 });
 
-const frameworks = ['Vue ( both 2 & 3 )、Vuex', 'React']
+const frameworks = ['Vue ( both 2 & 3 )、Vuex and Nuxt 3+', 'React']
 const css = ['Styled Components', 'Tailwind']
 const languages = ['HTML', 'CSS/SCSS', 'JavaScript ( ES6+ )']
 const development = ['SPA/SSR', 'Quasar', 'Element UI', 'i18n', 'CI/CD(GitHub Actions)']

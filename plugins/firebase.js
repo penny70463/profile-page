@@ -17,7 +17,8 @@ export default defineNuxtPlugin(async (nuxtApp) => {
                 storageBucket: "vast-block-262207.appspot.com",
                 messagingSenderId: "864767740820",
                 appId: "1:864767740820:web:4b732df9720c3edd939d81",
-                measurementId: "G-WZG61JRCGN"
+                measurementId: "G-WZG61JRCGN",
+                signInFlow: "popup"
             });
         let db = getFirestore(app, '(default)');
         const messageTable = collection(db,'message-table');

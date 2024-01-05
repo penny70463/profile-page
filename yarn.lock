@@ -1871,12 +1871,26 @@
   dependencies:
     "@volar/source-map" "1.10.10"
 
+"@volar/language-core@1.4.1":
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/@volar/language-core/-/language-core-1.4.1.tgz"
+  integrity sha512-EIY+Swv+TjsWpxOxujjMf1ZXqOjg9MT2VMXZ+1dKva0wD8W0L6EtptFFcCJdBbcKmGMFkr57Qzz9VNMWhs3jXQ==
+  dependencies:
+    "@volar/source-map" "1.4.1"
+
 "@volar/source-map@~1.10.5", "@volar/source-map@1.10.10":
   version "1.10.10"
   resolved "https://registry.npmjs.org/@volar/source-map/-/source-map-1.10.10.tgz"
   integrity sha512-GVKjLnifV4voJ9F0vhP56p4+F3WGf+gXlRtjFZsv6v3WxBTWU3ZVeaRaEHJmWrcv5LXmoYYpk/SC25BKemPRkg==
   dependencies:
     muggle-string "^0.3.1"
+
+"@volar/source-map@1.4.1":
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/@volar/source-map/-/source-map-1.4.1.tgz"
+  integrity sha512-bZ46ad72dsbzuOWPUtJjBXkzSQzzSejuR3CT81+GvTEI2E994D8JPXzM3tl98zyCNnjgs4OkRyliImL1dvJ5BA==
+  dependencies:
+    muggle-string "^0.2.2"
 
 "@volar/typescript@~1.10.5":
   version "1.10.10"
@@ -1885,6 +1899,36 @@
   dependencies:
     "@volar/language-core" "1.10.10"
     path-browserify "^1.0.1"
+
+"@volar/typescript@1.4.1":
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/@volar/typescript/-/typescript-1.4.1.tgz"
+  integrity sha512-phTy6p9yG6bgMIKQWEeDOi/aeT0njZsb1a/G1mrEuDsLmAn24Le4gDwSsGNhea6Uhu+3gdpUZn2PmZXa+WG2iQ==
+  dependencies:
+    "@volar/language-core" "1.4.1"
+
+"@volar/vue-language-core@1.6.4":
+  version "1.6.4"
+  resolved "https://registry.npmjs.org/@volar/vue-language-core/-/vue-language-core-1.6.4.tgz"
+  integrity sha512-1o+cAtN2DIDNAX/HS8rkjZc8wTMTK+zCab/qtYbvEVlmokhZiDrQeoD9/l0Ug7YCNg+mVuMNHKNBY7pX8U2/Jw==
+  dependencies:
+    "@volar/language-core" "1.4.1"
+    "@volar/source-map" "1.4.1"
+    "@vue/compiler-dom" "^3.3.0-beta.3"
+    "@vue/compiler-sfc" "^3.3.0-beta.3"
+    "@vue/reactivity" "^3.3.0-beta.3"
+    "@vue/shared" "^3.3.0-beta.3"
+    minimatch "^9.0.0"
+    muggle-string "^0.2.2"
+    vue-template-compiler "^2.7.14"
+
+"@volar/vue-typescript@1.6.4":
+  version "1.6.4"
+  resolved "https://registry.npmjs.org/@volar/vue-typescript/-/vue-typescript-1.6.4.tgz"
+  integrity sha512-qKwgP0KVQR/aaH/SN3AP7RB8NnXPWDn3tjyXP6IT6etxkDeZLBLsXWUD9KMak/RvV1DgbXDuz4F9yuZlbt29rA==
+  dependencies:
+    "@volar/typescript" "1.4.1"
+    "@volar/vue-language-core" "1.6.4"
 
 "@vue-macros/common@^1.8.0":
   version "1.8.0"
@@ -1928,7 +1972,7 @@
     estree-walker "^2.0.2"
     source-map-js "^1.0.2"
 
-"@vue/compiler-dom@^3.3.0", "@vue/compiler-dom@^3.3.4", "@vue/compiler-dom@3.3.13":
+"@vue/compiler-dom@^3.3.0", "@vue/compiler-dom@^3.3.0-beta.3", "@vue/compiler-dom@^3.3.4", "@vue/compiler-dom@3.3.13":
   version "3.3.13"
   resolved "https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.3.13.tgz"
   integrity sha512-EYRDpbLadGtNL0Gph+HoKiYqXLqZ0xSSpR5Dvnu/Ep7ggaCbjRDIus1MMxTS2Qm0koXED4xSlvTZaTnI8cYAsw==
@@ -1936,7 +1980,7 @@
     "@vue/compiler-core" "3.3.13"
     "@vue/shared" "3.3.13"
 
-"@vue/compiler-sfc@^3.3.4", "@vue/compiler-sfc@3.3.13":
+"@vue/compiler-sfc@^3.3.0-beta.3", "@vue/compiler-sfc@^3.3.4", "@vue/compiler-sfc@3.3.13":
   version "3.3.13"
   resolved "https://registry.npmjs.org/@vue/compiler-sfc/-/compiler-sfc-3.3.13.tgz"
   integrity sha512-DQVmHEy/EKIgggvnGRLx21hSqnr1smUS9Aq8tfxiiot8UR0/pXKHN9k78/qQ7etyQTFj5em5nruODON7dBeumw==
@@ -1990,7 +2034,7 @@
     estree-walker "^2.0.2"
     magic-string "^0.30.5"
 
-"@vue/reactivity@3.3.13":
+"@vue/reactivity@^3.3.0-beta.3", "@vue/reactivity@3.3.13":
   version "3.3.13"
   resolved "https://registry.npmjs.org/@vue/reactivity/-/reactivity-3.3.13.tgz"
   integrity sha512-fjzCxceMahHhi4AxUBzQqqVhuA21RJ0COaWTbIBl1PruGW1CeY97louZzLi4smpYx+CHfFPPU/CS8NybbGvPKQ==
@@ -2022,7 +2066,7 @@
     "@vue/compiler-ssr" "3.3.13"
     "@vue/shared" "3.3.13"
 
-"@vue/shared@^3.3.0", "@vue/shared@^3.3.8", "@vue/shared@3.3.13":
+"@vue/shared@^3.3.0", "@vue/shared@^3.3.0-beta.3", "@vue/shared@^3.3.8", "@vue/shared@3.3.13":
   version "3.3.13"
   resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.3.13.tgz"
   integrity sha512-/zYUwiHD8j7gKx2argXEMCUXVST6q/21DFU0sTfNX0URJroCe3b1UF6vLJ3lQDfLNIiiRl2ONp7Nh5UVWS6QnA==
@@ -5996,6 +6040,11 @@ ms@2.1.3:
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
+muggle-string@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/muggle-string/-/muggle-string-0.2.2.tgz"
+  integrity sha512-YVE1mIJ4VpUMqZObFndk9CJu6DBJR/GB13p3tXuNbwD4XExaI5EOuRl6BHeIDxIqXZVxSfAC+y6U1Z/IxCfKUg==
+
 muggle-string@^0.3.1:
   version "0.3.1"
   resolved "https://registry.npmjs.org/muggle-string/-/muggle-string-0.3.1.tgz"
@@ -7471,7 +7520,7 @@ semver@^6.3.1:
   resolved "https://registry.npmjs.org/semver/-/semver-6.3.1.tgz"
   integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
 
-semver@^7.0.0, semver@^7.1.1, semver@^7.3.4, semver@^7.3.5, semver@^7.5.0, semver@^7.5.4:
+semver@^7.0.0, semver@^7.1.1, semver@^7.3.4, semver@^7.3.5, semver@^7.3.8, semver@^7.5.0, semver@^7.5.4:
   version "7.5.4"
   resolved "https://registry.npmjs.org/semver/-/semver-7.5.4.tgz"
   integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
@@ -8202,10 +8251,10 @@ typesafe-path@^0.2.2:
   resolved "https://registry.npmjs.org/typesafe-path/-/typesafe-path-0.2.2.tgz"
   integrity sha512-OJabfkAg1WLZSqJAJ0Z6Sdt3utnbzr/jh+NAHoyWHJe8CMSy79Gm085094M9nvTPy22KzTVn5Zq5mbapCI/hPA==
 
-typescript@*, typescript@^5.0.2:
-  version "5.2.2"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-5.2.2.tgz"
-  integrity sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==
+typescript@*, typescript@^5.0.2, typescript@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-5.0.4.tgz"
+  integrity sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==
 
 ufo@^1.0.0, ufo@^1.1.1, ufo@^1.1.2, ufo@^1.2.0, ufo@^1.3.0, ufo@^1.3.1, ufo@^1.3.2:
   version "1.3.2"
@@ -8820,6 +8869,15 @@ vue-template-compiler@^2.7.14:
   dependencies:
     de-indent "^1.0.2"
     he "^1.2.0"
+
+vue-tsc@>=1.3.9, vue-tsc@1.6.4:
+  version "1.6.4"
+  resolved "https://registry.npmjs.org/vue-tsc/-/vue-tsc-1.6.4.tgz"
+  integrity sha512-8rg8S1AhRJ6/WriENQEhyqH5wsxSxuD5iaD+QnkZn2ArZ6evlhqfBAIcVN8mfSyCV9DeLkQXkOSv/MaeJiJPAQ==
+  dependencies:
+    "@volar/vue-language-core" "1.6.4"
+    "@volar/vue-typescript" "1.6.4"
+    semver "^7.3.8"
 
 vue-use-fixed-header@^2.0.0:
   version "2.0.0"

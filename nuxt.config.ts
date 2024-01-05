@@ -1,4 +1,12 @@
 export default defineNuxtConfig({
+  security: {
+    headers: {
+      crossOriginOpenerPolicy: 'allow-popups',
+    },
+  },
+  image: {
+    provider: "ipx"
+},
   devtools: { enabled: true },
   modules: [
     "@nuxt/ui",
@@ -41,13 +49,13 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
-     cssnano:
-       process.env.NODE_ENV === 'production'
-         ? { preset: ['default', { discardComments: { removeAll: true } }] }
+      cssnano:
+        process.env.NODE_ENV === 'production'
+          ? { preset: ['default', { discardComments: { removeAll: true } }] }
          : false, // disable cssnano when not in production
     },
- },
- runtimeConfig: {
+  },
+  runtimeConfig: {
   apiKey: "AIzaSyC4Rtcrl9hdhvWDuRPB7fLKxETYGJqGFRw",
   authDomain: "vast-block-262207.firebaseapp.com",
   projectId: "vast-block-262207",
