@@ -3,6 +3,7 @@ title: "I read Vue. JS Framework Design and Implementation part1 - The Overview 
 description: "A beginner-friendly guide to overview framework design"
 published: 2023/12/21
 slug: "vuejs-framework-design-and-implementation-1"
+category: "Vue"
 ---
 
 <!-- > This article was created using ChatGPT and meant as a placeholder -->

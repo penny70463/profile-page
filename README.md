@@ -24,7 +24,10 @@ FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaS
 
 #### Other Issues 
 
-- [ ] useRuntimeConfig didn't work
+- [x] environment variables
+
+I have failed to access environment variables on Netlify many times. It turns out that I needed to add "NUXT_ENV".
+ [solution works for me](https://zain-ahmed-5360.medium.com/how-to-config-env-variables-in-nuxt-js-with-heroku-and-netlify-adfcdde6c6cf)
 
 - [ ] Unchecked runtime.lastError: The message port closed before a response was received.
 
@@ -32,7 +35,7 @@ FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaS
 
 ### Features Coming Soon
 
-- [ ] Article Categories
+- [x] Article Categories
 
 - [x] Article Outline
 
