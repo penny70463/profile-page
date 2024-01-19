@@ -11,6 +11,10 @@
         <AppUsesItem v-for="(item, id) in frameworks" :key="id" :item="item" />
       </ul>
       <ul class="space-y-8">
+        <AppUsesHeader title="State Management Library" />
+        <AppUsesItem v-for="(item, id) in library" :key="id" :item="item" />
+      </ul>
+      <ul class="space-y-8">
         <AppUsesHeader title="CSS Library" />
         <AppUsesItem v-for="(item, id) in css" :key="id" :item="item" />
       </ul>
@@ -42,10 +46,11 @@ useSeoMeta({
   description,
 });
 
-const frameworks = ['Vue ( both 2 & 3 )、Vuex and Nuxt 3+', 'React']
+const frameworks = ['Vue ( both 2 & 3 )、Nuxt 3+', 'React']
+const library = ['Vuex', 'Pinia']
 const css = ['Styled Components', 'Tailwind']
 const languages = ['HTML', 'CSS/SCSS', 'JavaScript ( ES6+ )']
 const development = ['SPA/SSR', 'Quasar', 'Element UI', 'i18n', 'CI/CD(GitHub Actions)']
 const test = ['Jest']
-const version = ['Source Tree', 'GitHub']
+const version = ['Source Tree', 'GitHub', 'Fork', 'Azure DevOps']
 </script>
