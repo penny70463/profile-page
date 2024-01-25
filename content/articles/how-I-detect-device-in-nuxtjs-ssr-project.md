@@ -74,8 +74,8 @@ To setup all the needs, I added a device.global.ts file to the middleware folder
 ````ts
 export default defineNuxtRouteMiddleware((to, from) => {
     // device detection
-    const { isMobile } = useDevice();
-    if(isMobile) {
+    const device = useDevice();
+    if(device.isMobile) {
         to.meta.layout = 'mobile'
         if(!to.path.includes('/m')) {
             if(to.path === '/') {
@@ -85,6 +85,12 @@ export default defineNuxtRouteMiddleware((to, from) => {
             }
             
         }
+    } else {
+        to.meta.layout = 'default'
+        if(to.path.includes('/m')) {
+            return navigateTo(`${to.path.replace('/m', '')}`)
+        }
+        
     }
 })
 ````
