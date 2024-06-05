@@ -85,3 +85,5 @@ What about over-testing? This happens when you spend more time rewriting tests t
 
 
 ### Introducing the Catalog
+
+Chapter 5 explains how to use the refactoring methods in this book. It helps developers identify code smells and shows how to refactor them with examples. Each developer might use these methods differently, and the provided refactoring methods aren't set in stone. If a developer can come up with better refactoring techniques for their needs, that's great. This approach helps developers develop a refactoring mindset, making them more focused on code maintainability and readability in their daily development work.
