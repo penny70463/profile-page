@@ -45,3 +45,57 @@ Extract Function and Inline Function are the opposite of each other. For some fu
 2. Find all the places that call the function and replace them.
 3. Test.
 4. Remove the original function’s declaration.
+
+
+### [Extract Variable](https://refactoring.com/catalog/extractVariable.html)
+
+#### Motivation
+For a difficult-to-read expression, you can extract complex variables and give them meaningful names to make the logic easier to understand. The variable names should be appropriate for their scope. If the variable is used in multiple expressions, consider a name that is relevant in all contexts.
+
+#### Mechanics
+1. Ensure this expression has no side effects.
+2. Use immutable variables and utilize copies in the expression.
+3. Replace and test.
+
+
+### [Inline Variable](https://refactoring.com/catalog/inlineVariable.html)
+
+#### Motivation
+An appropriately named variable can properly state its role in the program, but sometimes the name might not be easier to understand than the expression itself.
+
+#### Mechanics
+1. Ensure the right-hand side of the naming has no side effects and is immutable.
+2. Identify the initial references and replace them.
+3. Test.
+4. Replace all references and test again.
+
+
+### Change Function Declaration
+
+#### Motivation
+A program can be seen as a combination of functions. The structure of how these functions connect determines the efficiency of future development. Function naming and parameter introduction define this structure of this program, so it's important to consider the context while aiming to keep them as decoupled as possible.
+
+#### Mechanics
+##### Simple Mechanics
+1. Before removing a parameter, check all related parts to avoid losing connections.
+2. Adjust the declaration.
+3. Update all references to the function.
+4. Test.
+
+##### Migration Mechanics
+1. Refactor the content to make it easy to extract.
+2. Use Extract Function, Inline Function, and Change Function Declaration in sequence.
+3. Test.
+
+
+### [Encapsulate Variable](https://refactoring.com/catalog/encapsulateVariable.html)
+
+#### Motivation
+Unlike functions, where renaming or modifying can be done gradually, data changes must be completed all at once to avoid errors. This is because data is usually accessed directly and has scope issues. To improve this situation, we use setters and getters to encapsulate variables.
+
+#### Mechanics
+
+1. Use encapsulation functions to update or retrieve variables.
+2. Call the encapsulation function for this purpose.
+3. Tighten variable visibility.
+4. Test the changes.
