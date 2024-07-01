@@ -99,3 +99,83 @@ Unlike functions, where renaming or modifying can be done gradually, data change
 2. Call the encapsulation function for this purpose.
 3. Tighten variable visibility.
 4. Test the changes.
+
+
+### [Rename Variable](https://refactoring.com/catalog/renameVariable.html)
+
+#### Motivation
+Good naming is key to creating clean code. However, names might need to be frequently changed. This could be due to misunderstandings of the code's purpose, changes in perspective as your skills grow, or shifts in user expectations. The names of function parameters are equally important.
+
+#### Mechanics
+1. For frequently used variables, consider using Encapsulate Variable.
+2. Find and replace all references.
+3. Test.
+
+
+### [Introduce Parameter Object](https://refactoring.com/catalog/introduceParameterObject.html)
+
+#### Motivation
+When multiple pieces of data are often used together, they form a cluster. It's a good idea to structure this data. This not only makes it easier to understand the relationships between the data items but also shortens the length of function parameters. The data structure can include objects, classes, and functions.
+
+Here is the example:
+
+Using readingsOutsideRange() to filter the out range alert, the parameters could be replaced with a Class.
+````js
+const station = { name: "ZB1",
+                  readings: [
+                    {temp: 47, time: "2016-11-10 09:10"},
+                    {temp: 53, time: "2016-11-10 09:20"},
+                    {temp: 58, time: "2016-11-10 09:30"},
+                    {temp: 53, time: "2016-11-10 09:40"},
+                    {temp: 51, time: "2016-11-10 09:50"},
+                  ]
+                };
+
+function readingsOutsideRange(station, min, max) {
+  return station.readings
+    .filter(r => r.temp < min || r.temp > max);
+}
+````
+
+````js
+class NumberRange {
+  constructor(min, max) {
+    this._data = {min: min, max: max};
+  }
+  get min() {return this._data.min;}
+  get max() {return this._data.max;}
+}
+
+const range = new NumberRange(operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
+````
+
+#### Mechanics
+1. If there isn't a suitable structure for the parameters, create one.
+2. Test.
+3. Use Change Function Declaration to add a parameter for new structure.
+4. Test.
+5. Update all function calls to pass the correct instance.
+6. Replace the original parameters with the structured parameter.
+
+
+### [Combine Functions into Class](https://refactoring.com/catalog/combineFunctionsIntoClass.html)
+
+#### Motivation
+Classes combine data and functions, making some data and functions accessible to other parts of the program. Using functions and data within a shared scope, rather than nested function structures, simplifies parameter passing and increases readability and ease of testing.
+
+#### Mechanics
+Structure and encapsulate the shared parameters of functions.
+Move functions that use these common parameters.
+Extract each piece of logic as a function and move it into the class.
+
+
+### [Combine Functions into Transform](https://refactoring.com/catalog/combineFunctionsIntoTransform.html)
+
+#### Motivation
+Software often involves data and related derived calculations. Centralizing these calculations can avoid duplicate logic. Using data transformation functions is one way to do this: you input the source data, perform calculations, and only need to verify the transformation function. Another method is to [Combine Functions into a Class](https://refactoring.com/catalog/combineFunctionsIntoClass.html). If the source data changes, using a class is better because classes provide encapsulation and better state management. They unify data and behavior, while functions just convert data from one form to another.
+
+#### Mechanics
+
+1. Create a transformation function that processes the data and returns the same values.
+2. Extract some logic and move it to this function.
+3. Test.
