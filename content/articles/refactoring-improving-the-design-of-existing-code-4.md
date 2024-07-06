@@ -179,3 +179,20 @@ Software often involves data and related derived calculations. Centralizing thes
 1. Create a transformation function that processes the data and returns the same values.
 2. Extract some logic and move it to this function.
 3. Test.
+
+
+### [Split Phase](https://refactoring.com/catalog/splitPhase.html)
+
+#### Motivation
+When a piece of code handles two different logics, separating them into different aspects is beneficial because when changes are needed, you don't have to re-understand and maintain the other part.
+
+How to determine if separation is needed:
+
+1. Determine the correlation: If changing the input doesn't affect that part of the logic, you can extract that logic.
+Or separate the logic into steps where each step is distinctly different.
+2. A compiler is a great example. It can be divided into: lexical analysis of the text, generating a syntax tree, and generating the target code. Each stage can be understood separately without needing to understand the other parts. Therefore, when using different sets of data or functions, you can determine if it's time to apply a split-phase approach.
+
+#### Mechanics
+1. Extract code with different concerns and create a separate function.
+2. Test.
+3. Examine parameter passing and separate according to concerns.
