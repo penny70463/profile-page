@@ -10,7 +10,7 @@ category: "Software Development"
 
 Perhaps the most important criterion in decomposing modules is to identify the secrets that modules should hide from the rest of the system. The most common secrets are data structures, which can be hidden through encapsulation.
 
-### [Encapsulte Record](https://refactoring.com/catalog/encapsulateRecord.html)
+### [Encapsulate Record](https://refactoring.com/catalog/encapsulateRecord.html)
 
 #### Motivation
 The difference between records and objects is that records are suitable for static or immutable data because it is difficult to control modifications to the data. Objects, on the other hand, manage data access and modifications through the encapsulation provided by setters and getters.
